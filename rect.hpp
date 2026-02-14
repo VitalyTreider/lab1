@@ -51,3 +51,15 @@ public:
     void set_water(double w);
     void transfer(double vl, Bochka& b);
 };
+
+class Matrix {
+private:
+    int rows;
+    int cols;
+    double **matrix;
+public:
+    Matrix(int n);
+    Matrix(int m, int n, double fill_value = 0);
+    Matrix(Matrix &p);
+    ~Matrix();    
+};

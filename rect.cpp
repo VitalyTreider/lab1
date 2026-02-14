@@ -211,3 +211,49 @@ void Bochka::transfer(double vl, Bochka& b) {
     b.set_alch(a2);
     b.set_water(w2);
 }
+
+//2.2 ---------------------------------------------------------
+Matrix::Matrix(int n) : rows(n), cols(n) {
+    matrix = new double*[rows];
+    for (int i=0; i<rows; i+=1) {
+        matrix[i] = new double[cols];
+}
+
+    for (int i=0; i<rows; i+=1) {
+        for (int j=0; j<cols; j+=1){
+            matrix[i][j] = (i == j) ? 1 : 0;
+        }
+    }
+}
+
+Matrix::Matrix(int m, int n, double fill_value = 0) : rows(m), cols(n) {
+    matrix = new double*[n];
+    for (int i=0; i<rows; i+=1) {
+        matrix[i] = new double[m];
+}
+
+    for (int i=0; i<rows; i+=1) {
+        for (int j=0; j<cols; j+=1){
+            matrix[i][j] = fill_value;
+        }
+    }
+}
+
+Matrix::Matrix(Matrix &p) : rows(p.rows), cols(p.cols) {
+    matrix = new double*[rows];
+    for (int i=0; i<rows; i+=1) {
+        matrix[i] = new double[cols];    
+    }
+    for (int i=0; i<rows; i+=1) {
+        for (int j=0; j<cols; j+=1) {
+            matrix[i][j] = p.matrix[i][j];
+        }
+    }
+}
+
+Matrix::~Matrix() {
+    for (int i=0; i<rows; i+=1) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
+}
