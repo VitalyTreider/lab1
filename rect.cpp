@@ -1,5 +1,6 @@
 #include "rect.hpp"
 #include <iostream>
+#include <cstring>
 
 Rect::Rect() {
     c1 = 0;

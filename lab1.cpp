@@ -44,6 +44,8 @@
 
 #include <iostream>
 #include "rect.hpp"
+#include "my_string.hpp"
+#include <cstring>
 
 int main()
 {
@@ -440,8 +442,6 @@ int main()
      * - с параметром `const char *` - объект выделяет память под копию этой строки.
      *
      * Добавьте следующие методы:
-     * - `char get(int i)` - получение i-того элемента строки;
-     * - `void set(int i, char c)` - установка i-того элемента строки;
      * - `void set_new_string(const char *str)` - замена текущего содержимого
      *   на новое;
      * - `void print()` - вывод строки на консоль;
@@ -452,20 +452,29 @@ int main()
      * Продемонстрируйте ниже использование этого класса.
      */
 
-    {
-
-    }
-
     /**
      * Проверьте, что ваша строка корректно работает в следующих ситуациях.
      */
 
-    /* {
+    {
+        std::cout << "--------------------------------------------------" << std::endl;
         MyString s1;
+        s1.print();
         MyString s2 = s1;
+        s2.print();
         MyString s3("This is my string");
+        s3.print();
         MyString s4 = s3;
-    } */
+        s4.print();
+        std::cout << s3.get(0) << std::endl;
+        s3.set(0, 't');
+        std::cout << s3.get(0) << std::endl;
+        s4.set_new_string("this new string");
+        s4.print();
+        s3.print();
+        s3.read_line();
+        s3.print();
+    }
 
     /**
      * Задание 2.4. Объект-алгоритм.
