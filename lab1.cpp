@@ -409,7 +409,11 @@ int main()
      */
 
     {
-	
+        int n;
+        std::cout << "Введите номер числа Фибоначчи: ";
+        std::cin >> n;
+        int number = fib(n);
+        std::cout << "Число Фибоначчи: " << number << std::endl;	
     }
 
     /**
