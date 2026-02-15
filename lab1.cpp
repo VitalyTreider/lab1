@@ -44,6 +44,7 @@
 
 #include <iostream>
 #include "rect.hpp"
+#include "text_wrapper.hpp"
 #include "my_string.hpp"
 #include <cstring>
 
