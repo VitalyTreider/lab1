@@ -1,3 +1,6 @@
+#ifndef MY_STRING_HPP
+#define MY_STRING_HPP
+
 class MyString {
 private:
     char* str;
@@ -12,4 +15,8 @@ public:
     void set_new_string(const char *s);
     void print();
     void read_line();
+    int lns();
 };
+
+#endif
+

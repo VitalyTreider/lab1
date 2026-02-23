@@ -498,13 +498,13 @@ int main()
      * Примерное использование класса приведено ниже.
      */
 
-    /* {
+    {
         int line_width = 40;
         MyString input;
         input.read_line();
         TextWrapper wrapper(input, line_width);
         wrapper.print_wrapped();
-    } */
+    }
 
     /**
      * Задание 3. Сборка проекта, Make-файлы.
