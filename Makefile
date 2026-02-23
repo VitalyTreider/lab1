@@ -16,7 +16,7 @@ build/bochka.o: src/bochka.cpp src/bochka.hpp
 	g++ -g -c -o build/bochka.o src/bochka.cpp
 
 build/debug.out: src/lab1.cpp build/my_string.o build/text_wrapper.o build/rect.o build/matrix.o build/bochka.o
-	g++ -g -c -o build/debug.out src/lab1.cpp build/my_string.o build/text_wrapper.o build/rect.o build/matrix.o build/bochka.o
+	g++ -g -o build/debug.out src/lab1.cpp build/my_string.o build/text_wrapper.o build/rect.o build/matrix.o build/bochka.o
 
 debug: build/debug.out
 	gdb build/debug.out
@@ -24,5 +24,8 @@ debug: build/debug.out
 build/leaks.out: build/debug.out
 	cp build/debug.out build/leaks.out
 
-leaks: build/debug.out
-	valgrid --leak-check=full ./build/leaks.out < input.txt
+leaks: build/leaks.out
+	valgrind --leak-check=full ./build/leaks.out < input.txt
+
+clean:
+	rm -rf build/*.o build/debug.out build/leaks.out
