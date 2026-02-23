@@ -45,6 +45,8 @@
 #include <iostream>
 #include "rect.hpp"
 #include "text_wrapper.hpp"
+#include "matrix.hpp"
+#include "bochka.hpp"
 #include "my_string.hpp"
 #include <cstring>
 
