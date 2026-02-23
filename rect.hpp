@@ -1,6 +1,6 @@
 class Rect {
 private:
-    int c1;
+   int c1;
     int c2;
     int c3;
     int c4;
@@ -29,48 +29,4 @@ public:
 Rect bounding_rect(Rect r1, Rect r2);
 void print_rect(Rect& r);
 
-class Bochka {
-private:
-    double volume;
-    double p_water;
-    double p_alch;
-    double water;
-    double alch;
-public:
-    Bochka();
-    Bochka(double vol, double p_a);
-    double get_palch();
-    double get_pwater();
-    double get_volume();
-    double get_alch();
-    double get_water();
-    void set_p_water(double p_w);
-    void set_p_alch(double p_a);
-    void set_volume(double v);
-    void set_alch(double a);
-    void set_water(double w);
-    void transfer(double vl, Bochka& b);
-};
 
-class Matrix {
-private:
-    int rows;
-    int cols;
-    double **matrix;
-public:
-    Matrix(int n);
-    Matrix(int m, int n, double fill_value = 0);
-    Matrix(const Matrix &p);
-    ~Matrix();
-    double get(int i, int j);
-    void set(int i, int j, double value);
-    int get_height();
-    int get_width();
-    void negate();
-    void add_in_place(Matrix &other);
-    Matrix multiply(Matrix &other);
-    Matrix power(int n);
-    Matrix& operator=(const Matrix &p);
-};
-
-int fib(int n);

@@ -53,7 +53,9 @@ void MyString::read_line() {
     delete[] str;
 
     char k;
-    while (std::cin.get(k) && k != '\n') { }
+    if (std::cin.peek() == '\n') {
+        std::cin.ignore();
+    }
 
     int cap = 10;
     str = new char[cap];
@@ -73,4 +75,8 @@ void MyString::read_line() {
         str[ln++]=c;
     }
     str[ln]='\0';
+}
+
+int MyString::lns() {
+    return strlen(str);
 }
