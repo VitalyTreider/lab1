@@ -29,3 +29,26 @@ leaks: build/leaks.out
 
 clean:
 	rm -rf build/*.o build/debug.out build/leaks.out
+
+build/test_rect_basic.out: tests/test_rect_basic_methods.cpp src/rect.cpp
+	g++ -g -o build/test_rect_basic.out tests/test_rect_basic_methods.cpp src/rect.cpp
+
+build/test_rect_properties.out: tests/test_rect_properties.cpp src/rect.cpp
+	g++ -g -o build/test_rect_properties.out tests/test_rect_properties.cpp src/rect.cpp
+
+build/test_rect_operations.out: tests/test_rect_operations.cpp src/rect.cpp
+	g++ -g -o build/test_rect_operations.out tests/test_rect_operations.cpp src/rect.cpp
+
+build/test_bounding_rect.out: tests/test_bounding_rect.cpp src/rect.cpp
+	g++ -g -o build/test_bounding_rect.out tests/test_bounding_rect.cpp src/rect.cpp
+
+test: build/test_rect_basic.out build/test_rect_properties.out build/test_rect_operations.out build/test_bounding_rect.out
+	@echo "Running basic methods test..."
+	./build/test_rect_basic.out
+	@echo "Running properties tests (width, height) ..."
+	./build/test_rect_properties.out
+	@echo "Running operations tests (move, inflate) ..."
+	./build/test_rect_operations.out
+	@echo "Running bounding rect tests ..."
+	./build/test_bounding_rect.out
+	@echo "--ALL TESTS PASSED--"

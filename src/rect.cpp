@@ -11,10 +11,21 @@ Rect::Rect() {
 }
 
 Rect::Rect(int c11, int c22, int c33, int c44) {
-    c1 = c11;
-    c2 = c22;
-    c3 = c33;
-    c4 = c44;
+    if (c11 > c22) {
+        c1 = c22;
+        c2 = c11;
+    } else {
+        c1 = c11;
+        c2 = c22;
+    }
+    
+    if (c44 > c33) {
+        c3 = c44;
+        c4 = c33;
+    } else {
+        c3 = c33;
+        c4 = c44;
+    }
     std::cout << "Constructor init clearly, adress: " << this << std::endl;
 }
 
