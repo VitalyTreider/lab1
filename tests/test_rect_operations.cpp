@@ -4,7 +4,7 @@
 #include <cassert>
 
 int main() {
-    Rect r1(1, 4, 4, 1);
+    Rect r1(1, 1, 3, 3);
 
     r1.inflate(1);
     

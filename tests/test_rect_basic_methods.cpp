@@ -4,7 +4,7 @@
 #include <cassert>
 
 int main() {
-    Rect r1(1, 4, 4, 1);
+    Rect r1(1, 1, 3, 3);
     Rect r2;
     Rect r3(r1);
 
@@ -23,7 +23,7 @@ int main() {
     assert(r3.get_top() == 4);
     assert(r3.get_bottom() == 1);
 
-    r1.set_all(10, 40, 40, 10);
+    r1.set_all(10, 10, 30, 30);
  
     assert(r1.get_left() == 10);
     assert(r1.get_right() == 40);

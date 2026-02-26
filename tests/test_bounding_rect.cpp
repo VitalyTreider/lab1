@@ -4,12 +4,12 @@
 #include <cassert>
 
 int main() {
-    Rect r1(1, 4, 4, 1);
-    Rect r2(2, 5, 5, 2);
+    Rect r1(1, 1, 3, 3);
+    Rect r2(2, 2, 3, 3);
     Rect r3 = bounding_rect(r1, r2);
     
-    Rect r4(4, 1, 1, 4);
-    Rect r5(2, 5, 5, 2);
+    Rect r4(1, 1, 3, 3);
+    Rect r5(2, 2, 3, 3);
     Rect r6 = bounding_rect(r4, r5);
 
     assert(r3.get_left() == 1);
